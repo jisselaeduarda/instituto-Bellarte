@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Instituto Bell'Arte: um espaço dedicado à cultura, à criatividade e à expressão artística."
+  >
+
+  <meta name="theme-color" content="#4b1725">
+
+  <title>Instituto Bell'Arte | Arte, Cultura e Expressão</title>
+
+  <link rel="preload" as="image" href="/assets/images/louvre.jpg">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="module" src="/js/catalogo.js"></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">
+    Pular para o conteúdo
+  </a>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="Instituto Bell'Arte, início"
+      >
+        <span class="brand-institute">INSTITUTO</span>
+        <span class="brand-name">Bell'Arte</span>
+        <span class="brand-tagline">
+  Um espaço para aprender, criar e expressar.
+</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav
+        class="main-nav"
+        id="main-nav"
+        aria-label="Navegação principal"
+      >
+        <a href="#inicio">Início</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#sobre">Sobre</a>
+
+        <a class="nav-cta" href="#cursos">
+          Área do aluno
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- BANNER PRINCIPAL -->
+    <section
+      class="hero"
+      id="inicio"
+      aria-labelledby="hero-title"
+    >
+
+     <div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+  <h1 id="hero-title">
+    Desperte sua expressão artística
+  </h1>
+
+  <div class="hero-actions">
+
+    <p class="hero-copy">
+      Explore um universo de criatividade e conhecimento
+    </p>
+
+    <a class="button button-light hero-button" href="#cursos">
+      Conhecer cursos
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+    <!-- CATÁLOGO DE CURSOS -->
+    <section
+      class="courses-section section-wrap"
+      id="cursos"
+      aria-labelledby="courses-title"
+    >
+
+      <div class="section-heading courses-heading">
+        <div>
+
+          <p class="eyebrow">
+            NOSSO CATÁLOGO
+          </p>
+
+          <h2 id="courses-title">
+            Conheça nossos cursos
+          </h2>
+
+          <p class="section-description">
+            Explore as formações disponíveis e encontre novas
+            possibilidades de aprendizado.
+          </p>
+
+        </div>
+      </div>
+
+      <form
+        class="course-filters"
+        id="course-filters"
+        role="search"
+      >
+
+        <div class="filter-field filter-search">
+
+          <label for="busca">
+            Buscar curso
+          </label>
+
+          <input
+            id="busca"
+            name="busca"
+            type="search"
+            placeholder="Digite o nome do curso"
+            autocomplete="off"
+          >
+
+        </div>
+
+        <div class="filter-field">
+
+          <label for="categoria">
+            Categoria
+          </label>
+
+          <select id="categoria" name="categoria">
+
+            <option value="">Todas</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Segurança">Segurança</option>
+            <option value="Gestão">Gestão</option>
+
+          </select>
+
+        </div>
+
+        <div class="filter-field">
+
+          <label for="modalidade">
+            Modalidade
+          </label>
+
+          <select id="modalidade" name="modalidade">
+
+            <option value="">Todas</option>
+            <option value="Online">Online</option>
+            <option value="Presencial">Presencial</option>
+
+          </select>
+
+        </div>
+
+        <div class="filter-field">
+
+          <label for="status">
+            Status
+          </label>
+
+          <select id="status" name="status">
+
+            <option value="">Todos</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Em breve">Em breve</option>
+            <option value="Encerrado">Encerrado</option>
+
+          </select>
+
+        </div>
+
+        <div class="filter-actions">
+
+          <button
+            class="button button-red"
+            type="submit"
+          >
+            Aplicar filtros
+          </button>
+
+          <button
+            class="button button-ghost"
+            id="clear-filters"
+            type="button"
+          >
+            Limpar
+          </button>
+
+        </div>
+
+      </form>
+
+      <div class="results-row">
+
+        <p id="result-count" aria-live="polite">
+          Carregando cursos...
+        </p>
+
+      </div>
+
+      <div
+        class="course-rail"
+        id="course-rail"
+        aria-label="Cursos disponíveis"
+      >
+
+        <div class="state-message" role="status">
+          Carregando cursos...
+        </div>
+
+      </div>
+
+      <div class="rail-footer">
+
+        <span class="rail-hint">
+          Selecione um curso para ver os detalhes.
+        </span>
+
+        <div class="rail-controls">
+
+          <button
+            class="icon-button"
+            id="course-prev"
+            type="button"
+            aria-label="Cursos anteriores"
+          >
+            <img
+              src="/assets/images/arrow-navigation-1.svg"
+              alt=""
+            >
+          </button>
+
+          <button
+            class="icon-button"
+            id="course-next"
+            type="button"
+            aria-label="Próximos cursos"
+          >
+            <img
+              src="/assets/images/arrow-navigation.svg"
+              alt=""
+            >
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SOBRE O INSTITUTO -->
+    <section
+      class="impact-section"
+      id="sobre"
+      aria-labelledby="impact-title"
+    >
+
+      <div class="section-wrap impact-inner">
+
+        <div class="impact-intro">
+
+          <p class="eyebrow">
+            NOSSA ESSÊNCIA
+          </p>
+
+          <h2 id="impact-title">
+            Arte que<br>
+            transforma
+          </h2>
+
+          <p>
+            Acreditamos na arte como uma forma de conhecimento,
+            expressão e conexão entre pessoas e culturas.
+          </p>
+
+        </div>
+
+        <div class="impact-content">
+
+          <div class="stats-list">
+
+            <div class="stat">
+              <strong>Cultura</strong>
+              <span>Conhecimento e repertório artístico</span>
+            </div>
+
+            <div class="stat">
+              <strong>Criatividade</strong>
+              <span>Liberdade para imaginar e criar</span>
+            </div>
+
+            <div class="stat">
+              <strong>Expressão</strong>
+              <span>Desenvolvimento da identidade artística</span>
+            </div>
+
+            <div class="stat">
+              <strong>Tradição</strong>
+              <span>Valorização da história e da arte</span>
+            </div>
+
+          </div>
+
+          <div class="benefits-grid">
+
+            <article class="benefit">
+
+              <img
+                src="/assets/images/01-certificacao-bege.svg"
+                alt=""
+              >
+
+              <h3>Conhecimento artístico</h3>
+
+              <p>
+                Descubra novas linguagens, técnicas e possibilidades
+                de expressão.
+              </p>
+
+            </article>
+
+            <article class="benefit">
+
+              <img
+                src="/assets/images/02-professores-bege.svg"
+                alt=""
+              >
+
+              <h3>Aprendizado</h3>
+
+              <p>
+                Desenvolva habilidades por meio de experiências
+                e conhecimentos artísticos.
+              </p>
+
+            </article>
+
+            <article class="benefit">
+
+              <img
+                src="/assets/images/03-suporte-bege.svg"
+                alt=""
+              >
+
+              <h3>Desenvolvimento</h3>
+
+              <p>
+                Amplie seu repertório e fortaleça sua própria
+                identidade criativa.
+              </p>
+
+            </article>
+
+            <article class="benefit">
+
+              <img
+                src="/assets/images/04-flexibilidade-bege.svg"
+                alt=""
+              >
+
+              <h3>Novas experiências</h3>
+
+              <p>
+                Encontre diferentes caminhos para aprender,
+                experimentar e criar.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA BELL'ARTE -->
+    <section
+      class="testimonials-section"
+      aria-labelledby="testimonials-title"
+    >
+
+      <div class="section-wrap">
+
+        <div class="section-heading testimonial-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              NOSSA VISÃO
+            </p>
+
+            <h2 id="testimonials-title">
+              Muito além da técnica
+            </h2>
+
+          </div>
+
+          <div class="rail-controls">
+
+            <button
+              class="icon-button"
+              id="review-prev"
+              type="button"
+              aria-label="Conteúdo anterior"
+            >
+              <img
+                src="/assets/images/arrow-navigation-1.svg"
+                alt=""
+              >
+            </button>
+
+            <button
+              class="icon-button"
+              id="review-next"
+              type="button"
+              aria-label="Próximo conteúdo"
+            >
+              <img
+                src="/assets/images/arrow-navigation.svg"
+                alt=""
+              >
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="reviews-rail" id="reviews-rail">
+
+          <article class="review-card">
+
+            <p>
+              A arte amplia nossa maneira de observar o mundo
+              e perceber a beleza nos detalhes.
+            </p>
+
+            <div class="review-person">
+              <strong>Cultura</strong>
+              <span>Conhecimento que atravessa gerações</span>
+            </div>
+
+          </article>
+
+          <article class="review-card">
+
+            <p>
+              Cada experiência artística abre espaço para
+              novas ideias, descobertas e possibilidades.
+            </p>
+
+            <div class="review-person">
+              <strong>Criatividade</strong>
+              <span>Liberdade para imaginar e criar</span>
+            </div>
+
+          </article>
+
+          <article class="review-card">
+
+            <p>
+              Aprender arte também é descobrir novas formas
+              de expressar pensamentos e sentimentos.
+            </p>
+
+            <div class="review-person">
+              <strong>Expressão</strong>
+              <span>Uma linguagem própria para cada pessoa</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section
+      class="final-cta"
+      aria-labelledby="final-cta-title"
+    >
+
+      <div class="final-cta-content">
+
+        <p class="eyebrow eyebrow-light">
+          SUA JORNADA COMEÇA AQUI
+        </p>
+
+        <h2 id="final-cta-title">
+          Descubra o universo da arte
+        </h2>
+
+        <p>
+          Explore novas possibilidades de conhecimento,
+          criatividade e expressão.
+        </p>
+
+        <a class="button button-light" href="#cursos">
+          Explorar cursos
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+      <div
+        class="final-cta-image"
+        role="img"
+        aria-label="Ambiente artístico e cultural"
+      ></div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+
+    <div class="section-wrap footer-grid">
+
+      <div class="footer-brand">
+
+        <a
+          class="brand"
+          href="#inicio"
+          aria-label="Instituto Bell'Arte, início"
+        >
+          <span class="brand-institute">INSTITUTO</span>
+          <span class="brand-name">Bell'Arte</span>
+        </a>
+
+        <p>
+          Um espaço dedicado à cultura, à criatividade
+          e à expressão artística.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h2>Navegação</h2>
+
+        <a href="#inicio">Início</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#sobre">Sobre</a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h2>Explore</h2>
+
+        <a href="#cursos">Catálogo de cursos</a>
+        <a href="#testimonials-title">Nossa visão</a>
+        <a href="#sobre">Nossa essência</a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h2>Instituto</h2>
+
+        <span>Arte e cultura</span>
+        <span>Conhecimento</span>
+        <span>Expressão artística</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom section-wrap">
+
+      <span>
+        © <span id="current-year">2026</span> Instituto Bell'Arte
+      </span>
+
+      <span>
+        Arte, cultura e expressão.
+      </span>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+</body>
+</html>

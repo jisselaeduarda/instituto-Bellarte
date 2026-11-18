@@ -1,0 +1,42 @@
+
+# Arquivos gerados pelo .NET
+bin/
+obj/
+
+# Banco de dados local
+*.db
+*.db-shm
+*.db-wal
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+secrets.json
+
+# Arquivos do sistema e editor
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db
+wwwroot/js/app.js~
+
+# Backups e arquivos temporários
+*.bak
+*.bak.*
+*.quebrado-*
+*.recuperado
+*.recuperado-*
+
+# Bancos SQLite e seus backups
+*.sqlite
+*.sqlite3
+*.db.*
+
+# Outras versões de backup
+*.bak*
+
+# Logotipos antigos do projeto SESI
+frontend/assets/images/logo-sesi.svg
+frontend/assets/images/logo-sesi-industria-primary.svg
+frontend/assets/images/logo-sesi-industria-white.svg
