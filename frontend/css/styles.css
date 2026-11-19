@@ -1113,6 +1113,32 @@ body:not(.course-detail-body) .site-header.header-scrolled .nav-cta {
   color: #FFFDF8;
 }
 
+/* VIDEO CINEMATOGRAFICO - INSTITUTO BELL'ARTE */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* CAMADA ESCURA SOBRE O VIDEO */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(35, 15, 17, .88) 0%,
+    rgba(35, 15, 17, .62) 42%,
+    rgba(35, 15, 17, .12) 100%
+  );
+}
+
+
 /* Botão Conhecer cursos */
 /* Botão Conhecer cursos */
 .hero-button {

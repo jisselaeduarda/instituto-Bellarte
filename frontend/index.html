@@ -72,37 +72,57 @@
 
   <main id="conteudo">
 
-    <!-- BANNER PRINCIPAL -->
-    <section
-      class="hero"
-      id="inicio"
-      aria-labelledby="hero-title"
+    
+<!-- BANNER PRINCIPAL -->
+<section
+  class="hero"
+  id="inicio"
+  aria-labelledby="hero-title"
+>
+
+  <!-- VIDEO DE FUNDO -->
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source
+      src="/assets/videos/Video-Banner.mp4"
+      type="video/mp4"
     >
+  </video>
 
-     <div class="hero-overlay"></div>
+  <!-- CAMADA ESCURA SOBRE O VIDEO -->
+  <div class="hero-overlay"></div>
 
-<div class="hero-content">
+  <!-- CONTEUDO DO BANNER -->
+  <div class="hero-content">
 
-  <h1 id="hero-title">
-    Desperte sua expressão artística
-  </h1>
+    <h1 id="hero-title">
+      Desperte sua expressão artística
+    </h1>
 
-  <div class="hero-actions">
+    <div class="hero-actions">
 
-    <p class="hero-copy">
-      Explore um universo de criatividade e conhecimento
-    </p>
+      <p class="hero-copy">
+        Explore um universo de criatividade e conhecimento
+      </p>
 
-    <a class="button button-light hero-button" href="#cursos">
-      Conhecer cursos
-      <span aria-hidden="true">→</span>
-    </a>
+      <a class="button button-light hero-button" href="#cursos">
+        Conhecer cursos
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
 
   </div>
 
-</div>
-
 </section>
+
 
     <!-- CATÁLOGO DE CURSOS -->
     <section
