@@ -1,3 +1,4 @@
+
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
@@ -13,9 +14,10 @@ RUN dotnet publish backend/CTED.CatalogoCursos.csproj \
     /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
-WORKDIR /app
+WORKDIR /app/backend
 
 COPY --from=build /app/publish ./
+COPY --from=build /src/frontend /app/frontend
 
 ENV ASPNETCORE_URLS=http://0.0.0.0:10000
 EXPOSE 10000
