@@ -1093,27 +1093,17 @@ body:not(.course-detail-body) .site-header.header-scrolled .nav-cta {
    BANNER - FRASE E BOTÃO À DIREITA
 ================================= */
 
-.hero-actions {
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 580px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
-  width: 100%;
-  margin-top: 15px;
-  text-align: right;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #24130f;
 }
 
-/* Frase acima do botão */
-.hero-copy {
-  max-width: 320px;
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
-  color: #FFFDF8;
-}
-
-/* VIDEO CINEMATOGRAFICO - INSTITUTO BELL'ARTE */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -1121,15 +1111,14 @@ body:not(.course-detail-body) .site-header.header-scrolled .nav-cta {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
 }
 
-/* CAMADA ESCURA SOBRE O VIDEO */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(35, 15, 17, .88) 0%,
@@ -1138,19 +1127,9 @@ body:not(.course-detail-body) .site-header.header-scrolled .nav-cta {
   );
 }
 
-
-/* Botão Conhecer cursos */
-/* Botão Conhecer cursos */
-.hero-button {
-  font-family: var(--font-brand);
-  font-size: 24px;
-  font-weight: 400;
-  min-height: 38px;
-  padding: 7px 20px;
-  color: #642532;
-  background: #F3EBDD;
-  border: 1px solid #B49762;
-  border-radius: 5px;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* Efeito ao passar o mouse */
